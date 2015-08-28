@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>IRS auction API</title>
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<!-- build:css(.) styles/vendor.css -->
+	<!-- bower:css -->
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- build:css(.tmp) styles/main.css -->
+	<!-- endbuild -->
+	<link rel="shortcut icon" href="assets/images/540-logo.jpg">
+
+	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+
+	<!-- Custom styles for our template -->
+	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="bower_components/slick-carousel/slick/slick.css">
+	<link rel="stylesheet" href="bower_components/slick-carousel/slick/slick-theme.css">
+	<link rel="stylesheet" href="bower_components/ngSmoothScroll/angular-smooth-scroll.js">
+	<!-- <link rel="stylesheet" type="text/css" href="jquery.fullPage.css" /> -->
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="assets/js/html5shiv.js"></script>
+	<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<!--old navbar-->
+<!-- <div class="navbar-collapse collapse">
+  <ul class="nav navbar-nav pull-right">
+    <li><a href="#top">top</a></li>
+    <li class="active"><a href="#/evaluate" ng-click="navColor='gray-nav'" ng-click="footer2Color='teal-footer2'">Evaluate</a></li>
+
+    <li class="active"><a href="#/predict" ng-click="navColor='gray-nav'" ng-click="footer2Color='teal-footer2'">Predict</a></li> -->
+<!-- <li class="active"><a href="#/locate" ng-click="navColor='gray-nav'" ng-click="footer2Color='teal-footer2'">Locate</a> -->
+<!-- </li>
+    <li class="active"><a href="#section-three" ng-click="navColor='gray-nav'" ng-click="footer2Color='teal-footer2'">Compare</a></li>
+  </ul>
+</div> -->
+
+<body ng-app="irsApp" class="home">
+	<!-- Fixed navbar -->
+
+	<div class="navbar navbar-inverse navbar-fixed-top headroom"  ng-class="{'teal-nav': changeColor}">
+
+		<div class="container">
+			<div class="navbar-header page-scroll">
+				<!-- Button for smallest screens -->
+				<button type="button" class="navbar-toggle" ng-click="navColor='teal-nav'" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<a class="navbar-brand pull-left page-scroll" href="#/" ng-click="navColor=''" ng-click="footer2Color='teal-footer2'">
+					<img src="assets/images/logo-irs-white.png" height="60px" alt="IRS logo">
+				</a>
+			</div>
+			<!--ng-hide links on navbar on search view and results view-->
+			<div ng-show="showHeader">
+				<div ng-class="changeColor">
+					<div class="navbar-collapse collapse">
+						<ul class="nav navbar-nav navbar-right">
+							<li class="active"><a class="page-scroll" ng-click="navColor='teal-nav'" href="#/evaluate#section-one">Evaluate</a></li>
+							<li class="active"><a class="page-scroll" ng-click="navColor='teal-nav'" href="#/evaluate#section-two">Predict</a></li>
+							<li class="active"><a class="page-scroll" ng-click="navColor='teal-nav'" href="#/evaluate#section-three">Locate</a></li>
+							<li class="active"><a class="page-scroll" ng-click="navColor='teal-nav'" href="#/evaluate#section-four">Compare</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /.navbar -->
+
+	<div ng-view=""></div>
+
+	<footer id="footer">
+		<div class="footer1">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 widget">
+						<h3 class="widget-title">Internal Revenue Service
+							<br>
+							<br>Real and Personal Property Sales</h3>
+						<div class="widget-body">
+							<p >General Information: (202) 622-2000
+								<br>
+								Fax: (202) 622-6415
+								<br>
+								Hours: Mon-Fri 8:00am - 5:00pm
+								<br>
+								<br>
+								 For more information please visit <a href="http://www.treasury.gov/services/Pages/auctions_index.aspx">http://www.treasury.gov/services/Pages/auctions_index.aspx</a>.
+							</p>
+						</div>
+					</div>
+
+					<div class="col-md-6 widget col-md-offset-1">
+						<h3 class="widget-title">General Information</h3>
+						<div class="widget-body">
+							<p>Under authority of the Internal Revenue Code, the property described here has been seized or acquired for nonpayment of internal revenue taxes and will be sold. Please read the LEGAL NOTICES covering the NATURE OF TITLE, REDEMPTION RIGHTS, EFFECT
+								OF JUNIOR ENCUMBRANCES, TITLE OFFERED, and FORMS OF PAYMENT before making your bid.</p>
+							<p>Reasonable Accommodation: Requests for reasonable accommodations under Section 504 of the Rehabilitation Act should be directed to Steven K. Williams, Civil Rights Division, IRS steven.williams@irs.gov</p>
+						</div>
+					</div>
+				</div>
+				<!-- /row of widgets -->
+			</div>
+		</div>
+
+		<div class="footer2">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 widget col-md-offset-4">
+						<div class="widget-body">
+							<p>
+								Copyright &copy; 2015, 540.co. Designed by <a href="http://540.co/" rel="designer">540 LLC</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<!-- /row of widgets -->
+			</div>
+		</div>
+	</footer>
+
+	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+	<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script src="assets/js/headroom.min.js"></script>
+	<script src="assets/js/jQuery.headroom.min.js"></script>
+	<script src="assets/js/template.js"></script>-->
+	<script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
+	<!-- build:js(.) scripts/vendor.js -->
+	<!-- bower:js -->
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.js"></script>
+	<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+	<script src="bower_components/angular-resource/angular-resource.js"></script>
+	<script src="bower_components/angular-route/angular-route.js"></script>
+	<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+	<script src="bower_components/angular-touch/angular-touch.js"></script>
+	<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+	<script src="bower_components/lodash/lodash.js"></script>
+	<script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+	<script src="bower_components/slick-carousel/slick/slick.min.js"></script>
+	<script src="bower_components/angular-slick/dist/slick.js"></script>
+	<script src="bower_components/x2js/xml2json.min.js"></script>
+	<script src="bower_components/angular-xml/angular-xml.js"></script>
+	<script src="bower_components/angular-scroll/angular-scroll.js"></script>
+	<!-- endbower -->
+	<!-- endbuild -->
+
+	<!-- build:js({.tmp,app}) scripts/scripts.js -->
+	<script src="scripts/app.js"></script>
+	<script src="scripts/controllers/main.js"></script>
+	<!-- <script src="scripts/controllers/input.js"></script> -->
+	<!-- endbuild -->
+</body>
+
+</html>
